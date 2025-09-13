@@ -42,56 +42,67 @@
     section h2 {
       text-align: center; font-size: 2em; margin-bottom: 30px; color: #222;
     }
-    .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
-    }
-    .card {
-      background: #fff; border-radius: 8px; overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;
-      text-align: center;
-      padding: 10px;
-    }
-    .card:hover { transform: translateY(-5px); }
-    .card img {
-      width: 100%;
-      height: auto;
-      max-width: 220px;
-      max-height: 220px;
-      margin: auto;
-      display: block;
-      object-fit: contain;
-    }
-    .card h3 { margin: 10px 0 5px; font-size: 1.1em; color: #444; }
 
-    #about p {
-      max-width: 800px; margin: auto; font-size: 1.1em; color: #555;
+    /* Horizontal auto-scroll gallery */
+    .scroll-gallery {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      background: #f2f2f2;
+      padding: 20px 0;
+    }
+    .scroll-track {
+      display: flex;
+      gap: 20px;
+      animation: scroll 25s linear infinite;
+    }
+    .scroll-track img {
+      max-height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* Glass effect box */
-    .glass-box {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 25px;
+    #glass-services {
       text-align: center;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: 50px;
     }
-    .glass-box h3 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-      color: #222;
+    .glass-box {
+      display: inline-block;
+      padding: 30px 50px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      color: #fff;
+    }
+    .glass-box h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
     }
     .glass-box ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
-    .glass-box ul li {
-      font-size: 1.1em;
+    .glass-box li {
+      font-size: 1.2em;
       margin: 8px 0;
-      color: #333;
+    }
+
+    /* CTA */
+    #cta {
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px 20px;
+    }
+    #cta h2 {
+      font-size: 2em;
+      color: #2E7D32;
     }
 
     .contact { text-align: center; }
@@ -137,49 +148,37 @@
   </section>
 
   <section id="services">
-    <h2>Services</h2>
+    <h2>Social Media Posts</h2>
+    <div class="scroll-gallery">
+      <div class="scroll-track">
+        <img src="glowherb.png" alt="GlowHerb Design">
+        <img src="glowherb3.1.png" alt="GlowHerb 3.1 Design">
+        <img src="hiring july1.png" alt="Hiring Poster">
+        <img src="N.D. classes1 .png" alt="Classes Poster">
+        <img src="IAS ACADEMY.png" alt="IAS ACADEMY">
+        <img src="IMG-20250714-WA0042.jpg" alt="IMG-20250714-WA0042">
+        <img src="Smart english 22.jpg" alt="Smart english 22">
+        <img src="14.png" alt="Poster Design">
+      </div>
+    </div>
+  </section>
 
-    <!-- Glass effect services box -->
+  <section id="glass-services">
     <div class="glass-box">
-      <h3>What I Offer</h3>
+      <h2>Services</h2>
       <ul>
-        <li>✅ Social Media Design</li>
-        <li>✅ Thumbnail Design</li>
-        <li>✅ Logo Design</li>
-        <li>✅ Pamphlet Design</li>
-        <li>✅ Brochure Design</li>
-        <li>✅ And More...</li>
+        <li>Social Media Design</li>
+        <li>Thumbnail Design</li>
+        <li>Logo Design</li>
+        <li>Pamphlet Design</li>
+        <li>Brochure Design</li>
+        <li>Etc.</li>
       </ul>
     </div>
-
-    <div class="grid">
-      <div class="card"><img src="glowherb.png" alt="GlowHerb Design"></div>
-      <div class="card"><img src="glowherb3.1.png" alt="GlowHerb 3.1 Design"></div>
-      <div class="card"><img src="hiring july1.png" alt="Hiring Poster"></div>
-      <div class="card"><img src="N.D. classes1 .png" alt="Classes Poster"></div>
-      <div class="card"><img src="IAS ACADEMY.png" alt="IAS ACADEMY"></div>
-      <div class="card"><img src="IMG-20250714-WA0042.jpg" alt="IMG-20250714-WA0042"></div>
-      <div class="card"><img src="Smart english 22.jpg" alt="Smart english 22"></div>
-      <div class="card"><img src="14.png" alt="Poster Design"></div>
-    </div>
-
-    <h2 style="text-align:center; margin-top:50px; font-size:2em; color:#2E7D32;">
-      Let's Work Together 🚀
-    </h2>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact">
-      <a href="mailto:dashrathitg@gmail.com">📧 Email</a>
-      <a href="https://wa.me/918302542181">💬 WhatsApp</a>
-      <a href="https://www.behance.net/gallery/212696035/GRAPHIC-DESIGN-PORTFOLIO-2024">🎨 Behance</a>
-    </div>
+  <section id="cta">
+    <h2>Let's Work Together</h2>
   </section>
 
-  <footer>
-    <p>© 2025 Dashrath Balotiya — All rights reserved</p>
-  </footer>
-
-</body>
-</html>
+  <sect
