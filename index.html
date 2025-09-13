@@ -9,11 +9,48 @@
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
 
     header {
-      background: #1a1a1a; color: #fff;
-      text-align: center; padding: 40px 20px;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 20px;
     }
-    header h1 { font-size: 2.5em; margin-bottom: 10px; }
-    header p { font-size: 1.2em; color: #ccc; }
+    .header-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .header-text {
+      flex: 1;
+      text-align: left;
+    }
+    .header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .header-text p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+    .header-image img {
+      width: 150px;  /* image size adjust कर सकते हो */
+      height: auto;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-text {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .header-image img {
+        margin: auto;
+      }
+    }
 
     nav {
       background: #2a6f97; display: flex; justify-content: center;
@@ -101,8 +138,15 @@
 <body>
 
   <header>
-    <h1>Dashrath Balotiya</h1>
-    <p>Graphic Designer & Visual Artist</p>
+    <div class="header-container">
+      <div class="header-text">
+        <h1>Dashrath Balotiya</h1>
+        <p>Graphic Designer & Visual Artist</p>
+      </div>
+      <div class="header-image">
+        <img src="portfolio.png" alt="Portfolio Image">
+      </div>
+    </div>
   </header>
 
   <nav>
