@@ -8,39 +8,12 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
 
-    /* ===== HEADER BANNER ===== */
-    header {
-      background: url("back 2.png") no-repeat center center/cover;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    }
-    header p {
-      font-size: 1.2em;
-      color: #f0f0f0;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    /* Mobile banner */
-    @media (max-width: 768px) {
-      header {
-        background: url("back 1.png") no-repeat center center/cover;
-        height: 600px;
-        padding: 20px;
-      }
-      header h1 { font-size: 2em; }
-      header p { font-size: 1em; }
-    }
-
-    /* ===== NAVBAR ===== */
     nav {
       background: #2a6f97; display: flex; justify-content: center;
     }
@@ -50,7 +23,6 @@
     }
     nav a:hover { background: #1f5877; }
 
-    /* ===== HERO ===== */
     .hero {
       background: linear-gradient(135deg, #2a6f97, #1f5877);
       color: white; text-align: center; padding: 80px 20px;
@@ -65,7 +37,6 @@
     }
     .btn:hover { background: #e0e0e0; }
 
-    /* ===== SECTIONS ===== */
     section {
       padding: 50px 20px; max-width: 1000px; margin: auto;
     }
@@ -80,7 +51,7 @@
       margin-bottom: 30px;
     }
 
-    /* ===== HORIZONTAL SCROLL GALLERY ===== */
+    /* Horizontal scroll gallery */
     .scroll-gallery {
       overflow-x: auto;
       overflow-y: hidden;
@@ -89,7 +60,7 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 10px;
-      scrollbar-width: none;
+      scrollbar-width: none; /* Firefox */
     }
     .scroll-gallery::-webkit-scrollbar { display: none; }
     .scroll-gallery img {
@@ -103,7 +74,6 @@
     }
     .scroll-gallery img:active { cursor: grabbing; transform: scale(0.98); }
 
-    /* ===== CTA ===== */
     #cta {
       text-align: center;
       margin-top: 60px;
@@ -114,7 +84,6 @@
       color: #2a6f97;
     }
 
-    /* ===== CONTACT ===== */
     .contact { text-align: center; }
     .contact a {
       display: inline-block; margin: 10px; padding: 10px 20px;
@@ -123,7 +92,6 @@
     }
     .contact a:hover { background: #1f5877; }
 
-    /* ===== FOOTER ===== */
     footer {
       background: #1a1a1a; color: #fff; text-align: center; padding: 20px; margin-top: 40px;
     }
@@ -131,22 +99,28 @@
 </head>
 <body>
 
-  <!-- HEADER BANNER -->
+  <!-- Responsive Banner -->
   <header>
-    <div>
-      <h1>Dashrath Balotiya</h1>
-      <p>Graphic Designer & Visual Artist</p>
-    </div>
+    <picture>
+      <!-- Mobile -->
+      <source media="(max-width:768px)" srcset="back-1.webp" type="image/webp">
+      <source media="(max-width:768px)" srcset="back-1.jpg" type="image/jpeg">
+
+      <!-- Desktop -->
+      <source media="(min-width:769px)" srcset="back-2.webp" type="image/webp">
+      <source media="(min-width:769px)" srcset="back-2.jpg" type="image/jpeg">
+
+      <!-- Fallback -->
+      <img src="back-2.jpg" alt="Portfolio Banner">
+    </picture>
   </header>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO -->
   <div class="hero">
     <h2>Creativity Meets Design</h2>
     <p>Specialized in Social Media Posts & Visual Branding</p>
@@ -155,7 +129,6 @@
     </a>
   </div>
 
-  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>
@@ -164,33 +137,30 @@
     </p>
   </section>
 
-  <!-- SERVICES -->
   <section id="services">
     <h2>Services</h2>
     <p>Social Media Design | Thumbnail Design | Logo Design | Pamphlet Design | Brochure Design</p>
 
     <div class="scroll-gallery">
-      <img src="glowherb.png" alt="GlowHerb Design">
-      <img src="glowherb3.1.png" alt="GlowHerb 3.1 Design">
-      <img src="cream.png" alt="cream">
-      <img src="REALME AIRBUDS.png" alt="Realme">
-      <img src="Laddu gopal .png" alt="Laddu gopal Design">
-      <img src="page 1.jpg" alt="Poster Design">
-      <img src="hiring july1.png" alt="Hiring Poster">
-      <img src="N.D. classes1 .png" alt="Classes Poster">
-      <img src="IAS ACADEMY.png" alt="IAS ACADEMY">
-      <img src="IMG-20250714-WA0042.jpg" alt="IMG-20250714-WA0042">
-      <img src="Smart english 22.jpg" alt="Smart english 22">
-      <img src="14.png" alt="Poster Design">
+      <img src="glowherb.png" alt="GlowHerb Design" loading="lazy">
+      <img src="glowherb3.1.png" alt="GlowHerb 3.1 Design" loading="lazy">
+      <img src="cream.png" alt="cream" loading="lazy">
+      <img src="REALME AIRBUDS.png" alt="Realme" loading="lazy">
+      <img src="Laddu gopal .png" alt="Laddu gopal Design" loading="lazy">
+      <img src="page 1.jpg" alt="Poster Design" loading="lazy">
+      <img src="hiring july1.png" alt="Hiring Poster" loading="lazy">
+      <img src="N.D. classes1 .png" alt="Classes Poster" loading="lazy">
+      <img src="IAS ACADEMY.png" alt="IAS ACADEMY" loading="lazy">
+      <img src="IMG-20250714-WA0042.jpg" alt="IMG-20250714-WA0042" loading="lazy">
+      <img src="Smart english 22.jpg" alt="Smart english 22" loading="lazy">
+      <img src="14.png" alt="Poster Design" loading="lazy">
     </div>
   </section>
 
-  <!-- CTA -->
   <section id="cta">
     <h2>Let's Work Together</h2>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact">
@@ -200,7 +170,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Dashrath Balotiya — All rights reserved</p>
   </footer>
