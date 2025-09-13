@@ -52,50 +52,28 @@
       margin-bottom: 30px;
     }
 
-    /* Gallery */
+    /* Horizontal scroll gallery */
     .scroll-gallery {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-      padding: 20px 0;
-    }
-    .scroll-track {
+      overflow-x: auto;
+      overflow-y: hidden;
       display: flex;
       gap: 20px;
-      scroll-behavior: smooth;
-      overflow-x: auto;
-      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+      scrollbar-width: none; /* Firefox */
     }
-    .scroll-track::-webkit-scrollbar { display: none; }
-    .scroll-track img {
-      max-height: 200px;
+    .scroll-gallery::-webkit-scrollbar { display: none; }
+    .scroll-gallery img {
+      scroll-snap-align: start;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      max-height: 200px;
       flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      cursor: grab;
+      transition: transform 0.3s;
     }
-
-    /* Arrow buttons */
-    .arrow-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #2a6f97;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      cursor: pointer;
-      font-size: 1.8em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      transition: background 0.3s;
-    }
-    .arrow-btn:hover { background: #1f5877; }
-    #scrollLeft { left: 10px; }
-    #scrollRight { right: 10px; }
+    .scroll-gallery img:active { cursor: grabbing; transform: scale(0.98); }
 
     #cta {
       text-align: center;
@@ -153,19 +131,15 @@
     <h2>Services</h2>
     <p>Social Media Design | Thumbnail Design | Logo Design | Pamphlet Design | Brochure Design</p>
 
-    <div class="scroll-gallery" id="gallery">
-      <button class="arrow-btn" id="scrollLeft">←</button>
-      <div class="scroll-track" id="scroll-track">
-        <img src="glowherb.png" alt="GlowHerb Design">
-        <img src="glowherb3.1.png" alt="GlowHerb 3.1 Design">
-        <img src="hiring july1.png" alt="Hiring Poster">
-        <img src="N.D. classes1 .png" alt="Classes Poster">
-        <img src="IAS ACADEMY.png" alt="IAS ACADEMY">
-        <img src="IMG-20250714-WA0042.jpg" alt="IMG-20250714-WA0042">
-        <img src="Smart english 22.jpg" alt="Smart english 22">
-        <img src="14.png" alt="Poster Design">
-      </div>
-      <button class="arrow-btn" id="scrollRight">→</button>
+    <div class="scroll-gallery">
+      <img src="glowherb.png" alt="GlowHerb Design">
+      <img src="glowherb3.1.png" alt="GlowHerb 3.1 Design">
+      <img src="hiring july1.png" alt="Hiring Poster">
+      <img src="N.D. classes1 .png" alt="Classes Poster">
+      <img src="IAS ACADEMY.png" alt="IAS ACADEMY">
+      <img src="IMG-20250714-WA0042.jpg" alt="IMG-20250714-WA0042">
+      <img src="Smart english 22.jpg" alt="Smart english 22">
+      <img src="14.png" alt="Poster Design">
     </div>
   </section>
 
@@ -185,31 +159,6 @@
   <footer>
     <p>© 2025 Dashrath Balotiya — All rights reserved</p>
   </footer>
-
-  <script>
-    const track = document.getElementById('scroll-track');
-    const speed = 1; // Automatic scroll speed
-
-    // Automatic scroll
-    let scrollAmount = 0;
-    function autoScroll() {
-      scrollAmount += speed;
-      if(scrollAmount >= track.scrollWidth - track.clientWidth) scrollAmount = 0;
-      track.scrollTo({ left: scrollAmount });
-      requestAnimationFrame(autoScroll);
-    }
-    requestAnimationFrame(autoScroll);
-
-    // Arrow buttons manual scroll
-    document.getElementById('scrollRight').addEventListener('click', () => {
-      track.scrollBy({ left: 300, behavior: 'smooth' });
-      scrollAmount = track.scrollLeft; // Sync auto scroll
-    });
-    document.getElementById('scrollLeft').addEventListener('click', () => {
-      track.scrollBy({ left: -300, behavior: 'smooth' });
-      scrollAmount = track.scrollLeft;
-    });
-  </script>
 
 </body>
 </html>
