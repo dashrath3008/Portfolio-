@@ -8,50 +8,39 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
 
+    /* ===== HEADER BANNER ===== */
     header {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 40px 20px;
-    }
-    .header-container {
-      max-width: 1000px;
-      margin: auto;
+      background: url("back 2.png") no-repeat center center/cover;
+      height: 500px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      justify-content: center;
+      color: white;
+      text-align: center;
     }
-    .header-text {
-      flex: 1;
-      text-align: left;
-    }
-    .header-text h1 {
+    header h1 {
       font-size: 2.5em;
       margin-bottom: 10px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
-    .header-text p {
+    header p {
       font-size: 1.2em;
-      color: #ccc;
-    }
-    .header-image img {
-      width: 150px;  /* image size adjust कर सकते हो */
-      height: auto;
-      object-fit: contain;
-    }
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .header-text {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .header-image img {
-        margin: auto;
-      }
+      color: #f0f0f0;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
+    /* Mobile banner */
+    @media (max-width: 768px) {
+      header {
+        background: url("back 1.png") no-repeat center center/cover;
+        height: 600px;
+        padding: 20px;
+      }
+      header h1 { font-size: 2em; }
+      header p { font-size: 1em; }
+    }
+
+    /* ===== NAVBAR ===== */
     nav {
       background: #2a6f97; display: flex; justify-content: center;
     }
@@ -61,6 +50,7 @@
     }
     nav a:hover { background: #1f5877; }
 
+    /* ===== HERO ===== */
     .hero {
       background: linear-gradient(135deg, #2a6f97, #1f5877);
       color: white; text-align: center; padding: 80px 20px;
@@ -75,6 +65,7 @@
     }
     .btn:hover { background: #e0e0e0; }
 
+    /* ===== SECTIONS ===== */
     section {
       padding: 50px 20px; max-width: 1000px; margin: auto;
     }
@@ -89,7 +80,7 @@
       margin-bottom: 30px;
     }
 
-    /* Horizontal scroll gallery */
+    /* ===== HORIZONTAL SCROLL GALLERY ===== */
     .scroll-gallery {
       overflow-x: auto;
       overflow-y: hidden;
@@ -98,7 +89,7 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 10px;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
     .scroll-gallery::-webkit-scrollbar { display: none; }
     .scroll-gallery img {
@@ -112,6 +103,7 @@
     }
     .scroll-gallery img:active { cursor: grabbing; transform: scale(0.98); }
 
+    /* ===== CTA ===== */
     #cta {
       text-align: center;
       margin-top: 60px;
@@ -122,6 +114,7 @@
       color: #2a6f97;
     }
 
+    /* ===== CONTACT ===== */
     .contact { text-align: center; }
     .contact a {
       display: inline-block; margin: 10px; padding: 10px 20px;
@@ -130,6 +123,7 @@
     }
     .contact a:hover { background: #1f5877; }
 
+    /* ===== FOOTER ===== */
     footer {
       background: #1a1a1a; color: #fff; text-align: center; padding: 20px; margin-top: 40px;
     }
@@ -137,24 +131,22 @@
 </head>
 <body>
 
+  <!-- HEADER BANNER -->
   <header>
-    <div class="header-container">
-      <div class="header-text">
-        <h1>Dashrath Balotiya</h1>
-        <p>Graphic Designer & Visual Artist</p>
-      </div>
-      <div class="header-image">
-        <img src="portfolio.png" alt="Portfolio Image">
-      </div>
+    <div>
+      <h1>Dashrath Balotiya</h1>
+      <p>Graphic Designer & Visual Artist</p>
     </div>
   </header>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- HERO -->
   <div class="hero">
     <h2>Creativity Meets Design</h2>
     <p>Specialized in Social Media Posts & Visual Branding</p>
@@ -163,6 +155,7 @@
     </a>
   </div>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>
@@ -171,6 +164,7 @@
     </p>
   </section>
 
+  <!-- SERVICES -->
   <section id="services">
     <h2>Services</h2>
     <p>Social Media Design | Thumbnail Design | Logo Design | Pamphlet Design | Brochure Design</p>
@@ -191,10 +185,12 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section id="cta">
     <h2>Let's Work Together</h2>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact">
@@ -204,6 +200,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Dashrath Balotiya — All rights reserved</p>
   </footer>
